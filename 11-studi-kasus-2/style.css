@@ -1,5 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+header .gendre-tags {
+  margin-top: 10px;
+}
+
+header .gendre-tags .tag {
+  display: inline-block;
+  background-color: #06b6d4;
+  padding: 6px 16px;
+  margin: 0 5px;
+  border-radius: 20px;
+  font-size: 0.9em;
+}
+
+main {
+  width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+main .profile-card {
+  background-color: white;
+  padding: 40px;
+  margin: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  text-align: center;
+}
+
+main .profile-card .artist-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #06b6d4;
+  margin-bottom: 20px;
+}
+
+main .profile-card .bio {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+main .profile-card .bio p {
+  margin-bottom: 15px;
+}
+
+main .profile-card .stats {
+  margin-top: 30px;
+}
+
+main .profile-card .stats .stat-item {
+  display: inline-block;
+  width: 150px;
+  padding: 20px;
+  background-color: #f6f5f5;
+  margin: 10px 20px;
+  border-radius: 8px;
+  border: 2px solid #86dfee;
+}
+
+main .profile-card .stats .stat-value {
+  font-size: 2em;
+  font-weight: bold;
+  color: #06b6d4;
+}
+
+main .profile-card .stats .stat-label {
+  font-size: 0.9em;
+  color: #666;
+}
+
+main .discography {
+  margin: 50px 0;
+}
+
+main .discography h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+main .discography .album-list {
+  text-align: center;
+}
+
+main .discography .album-list .album-card {
+  display: inline-block;
 }
