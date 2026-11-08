@@ -108,6 +108,71 @@
         text-indent: 2px;
         text-align: center;
       }
+      #lineup ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+      #lineup ul li {
+        background-color: #1e293b;
+        padding: 20px;
+        border-radius: 12px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+      }
+      #lineup ul li:hover {
+        outline: 1px solid #06b6d4;
+      }
+      #lineup .artist-card {
+        position: relative;
+      }
+      #lineup .day-badge {
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f43f5e;
+        color: white;
+        padding: 3px 8px;
+        font-size: 0.6rem;
+        border-radius: 20px;
+        font-weight: bold;
+        opacity: 0.5;
+      }
+      #lineup img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 15px;
+        border: 3px solid #06b6d4;
+      }
+      #schedule table {
+        width: 100%;
+        margin-top: 20px;
+        background-color: #1e293b;
+        border-radius: 8px;
+        overflow: hidden;
+        border-collapse: collapse;
+      }
+      #schedule th,
+      #schedule td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: #334155;
+      }
+      #schedule th {
+        background-color: #06b6d4;
+        color: #0f172a;
+      }
+      #schedule tbody tr:nth-child(even) {
+        background-color: #263346;
+      }
+      #schedule tbody tr:hover {
+        background-color: #334155;
+      }
     </style>
   </head>
   <body>
@@ -158,7 +223,8 @@
         <h3>Artists Lineup</h3>
         <ul>
           <li>
-            <figure>
+            <figure class="artist-card">
+              <span class="day-badge">Day 1</span>
               <img src="/07-studi-kasus-1/assets/images/01_raka_pradipta.png" alt="raka_pradipta" width="200" />
               <figcaption>
                 <h4>Pradipta</h4>
@@ -168,7 +234,8 @@
             </figure>
           </li>
           <li>
-            <figure>
+            <figure class="artist-card">
+              <span class="day-badge">Day 1</span>
               <img src="/07-studi-kasus-1/assets/images/02_sekar_ayu.png" alt="sekar_ayu" width="200" />
               <figcaption>
                 <h4>Sekar Ayu</h4>
@@ -178,7 +245,8 @@
             </figure>
           </li>
           <li>
-            <figure>
+            <figure class="artist-card">
+              <span class="day-badge">Day 2</span>
               <img src="/07-studi-kasus-1/assets/images/03_jalan_pulang.png" alt="jalan_pulang" width="200" />
               <figcaption>
                 <h4>Jalan Pulang</h4>
@@ -188,7 +256,8 @@
             </figure>
           </li>
           <li>
-            <figure>
+            <figure class="artist-card">
+              <span class="day-badge">Day 2</span>
               <img src="/07-studi-kasus-1/assets/images/04_dimas_arjuna.png" alt="dimas_arjuna" width="200" />
               <figcaption>
                 <h4>Dimas Arjuna</h4>
@@ -198,7 +267,8 @@
             </figure>
           </li>
           <li>
-            <figure>
+            <figure class="artist-card">
+              <span class="day-badge">Day 3</span>
               <img src="/07-studi-kasus-1/assets/images/05_nadia_kirana.png" alt="nadia_kirana" width="200" />
               <figcaption>
                 <h4>Nadia Kirana</h4>
@@ -208,7 +278,8 @@
             </figure>
           </li>
           <li>
-            <figure>
+            <figure class="artist-card">
+              <span class="day-badge">Day 3</span>
               <img src="/07-studi-kasus-1/assets/images/06_orkes_pelangi_timur.png" alt="orkes_pelangi_timur" width="200" />
               <figcaption>
                 <h4>Orkes Pelangi Timur</h4>
