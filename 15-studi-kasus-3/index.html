@@ -173,6 +173,45 @@
       #schedule tbody tr:hover {
         background-color: #334155;
       }
+      #tickets form {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #1e293b;
+        padding: 30px;
+        border-radius: 10px;
+      }
+      #tickets label {
+        display: block;
+        margin-bottom: 8px;
+        color: #cbd5e1;
+      }
+      #tickets input,
+      #tickets select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid #475569;
+        border-radius: 5px;
+        background-color: #0f172a;
+        color: white;
+      }
+      #tickets input:focus,
+      #tickets select:focus {
+        outline: 2px solid #06b6d4;
+      }
+      #tickets button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #06b6d4;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      #tickets button[type="submit"]:hover {
+        background-color: #54cfee;
+      }
     </style>
   </head>
   <body>
@@ -402,26 +441,16 @@
           </div>
           <div>
             <label for="ticket_category">Ticket Category (3 Days Pass)</label>
-            <select name="tecket_category" id="ticket_category">
-              <option value=""disabled selected>Select Ticket Category..</option>
+            <select name="ticket_category" id="ticket_category">
+              <option value="" disabled selected>Select Ticket Category..</option>
               <option value="regular">Regular (Rp.500.000)</option>
               <option value="vip">VIP (Rp.1.500.000)</option>
               <option value="vvip">VVIP (Rp.3.000.000)</option>
             </select>
-          <div>
-            <label>Day Pass:</label>
           </div>
           <div>
-            <input type="checkbox" id="day1" name="day1" />
-            <label for="day1">Day 1 (June 15 2026) - Raka Pradipta & Sekar Ayu</label>
-          </div>
-          <div>
-            <input type="checkbox" id="day2" name="day2" />
-            <label for="day2">Day 2 (June 16 2026) - Jalan Pulan & Dimas Arjuna</label>
-          </div>
-          <div>
-            <input type="checkbox" id="day3" name="day3" />
-            <label for="day3">Day 3 (June 17 2026) - Nadia Kirana & Orkes Pelangi Timur</label>
+            <label for="quantity">Quantity (1-10)</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required />
           </div>
           <div>
             <button type="submit">Book Now</button>
@@ -485,7 +514,6 @@
       </p>
       <p>Contact: <a href="mailto:hello@wpustreamfest.com">hello@wpustreamfest.com</a></p>
     </footer>
-
     <br /><br /><br />
     <br /><br /><br />
     <br /><br /><br />
