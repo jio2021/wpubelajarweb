@@ -21,7 +21,7 @@ html {
   scrollbar-gutter: stable;
 }
 body {
-  font-family: "var(--font-body)";
+  font-family: var(--font-body);
   background-color: var(--bg-dark);
   color: var(--color-text-muted);
   line-height: 1.6;
@@ -31,7 +31,7 @@ h2,
 h3,
 h4 {
   color: white;
-  font-family: "var(--font-heading)";
+  font-family: var(--font-heading);
 }
 section:not(#hero, #gallery) {
   padding: 60px 0;
@@ -80,9 +80,9 @@ nav ul a {
   color: var(--color-text-main);
   font-weight: 500;
 }
-nav ul a:hover {
+/* nav ul a:hover {
   color: var(--color-cyan);
-}
+} */
 .menu-toggle {
   display: none;
 }
@@ -100,8 +100,9 @@ nav ul a:hover {
   height: 3px;
   background-color: #fff;
   border-radius: 2px;
-  transition: transform 0.3s ease;
-  opacity: 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   transform-origin: center;
 }
 .menu-toggle:checked ~ nav {
@@ -150,9 +151,9 @@ main {
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(6, 182, 212, 0.8);
 }
-#hero a:hover {
+/* #hero a:hover {
   background-color: #54cfee;
-}
+} */
 #about p {
   margin-bottom: 1em;
   text-indent: 2px;
@@ -160,22 +161,24 @@ main {
 }
 #lineup ul {
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr; /* HP: 1 kolom */
+  gap: clamp(20px, 3vw, 40px);
+  max-width: 1200px;
+  margin: 0 auto;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
 }
 #lineup ul li {
   background-color: var(--bg-card);
-  padding: 20px;
+  padding: 50px 30px;
   border-radius: 12px;
-  width: 300px;
+  width: auto;
   text-align: center;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
-#lineup ul li:hover {
+/* #lineup ul li:hover {
   outline: 1px solid var(--color-cyan);
-}
+} */
 #lineup .artist-card {
   position: relative;
 }
@@ -194,10 +197,11 @@ main {
 }
 #lineup img {
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   margin-bottom: 15px;
   border: 3px solid var(--color-cyan);
+  object-fit: cover;
 }
 #schedule table {
   width: 100%;
@@ -209,9 +213,13 @@ main {
 }
 #schedule th,
 #schedule td {
-  padding: 15px;
+  padding: 10px 8px;
+  font-size: 0.85rem;
   text-align: left;
-  border-bottom: #334155;
+  border-bottom: 1px solid #334155;
+}
+#schedule td:first-child {
+  white-space: nowrap;
 }
 #schedule th {
   background-color: var(--color-cyan);
@@ -256,7 +264,7 @@ main {
   color: #fff;
   border: none;
   border-radius: 5px;
-  cursor: povar(--font-body);
+  cursor: pointer;
   font-weight: bold;
 }
 #tickets button[type="submit"]:hover {
@@ -318,5 +326,35 @@ footer a {
     flex-direction: row;
     padding: 0;
     gap: 20px;
+  }
+  #lineup ul {
+    grid-template-columns: repeat(2, 1fr); /* tablet: 2 kolom */
+  }
+}
+@media (min-width: 64em) {
+  #lineup ul {
+    grid-template-columns: repeat(3, 1fr); /* desktop: 3 kolom */
+  }
+}
+@media (hover: hover) {
+  nav ul a:hover {
+    color: var(--color-cyan);
+  }
+  #lineup ul li:hover {
+    outline: 1px solid var(--color-cyan);
+  }
+  #hero a:hover {
+    background-color: #0597b1;
+  }
+}
+/* opsional: biar rapi juga di HP/tablet */
+@media (max-width: 900px) {
+  #lineup ul li {
+    padding: 35px 20px;
+  }
+}
+@media (max-width: 560px) {
+  #lineup ul li {
+    padding: 30px 20px;
   }
 }
